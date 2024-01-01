@@ -9,8 +9,8 @@ class AiAnalysisLog(models.Model):
     message = models.CharField(max_length=255)
     class_id = models.IntegerField(db_column='class')
     confidence = models.DecimalField(max_digits=5, decimal_places=4)
-    request_timestamp = models.IntegerField()
-    response_timestamp = models.IntegerField()
+    request_timestamp = models.PositiveIntegerField()
+    response_timestamp = models.PositiveIntegerField()
 
     class Meta:
         db_table = 'ai_analysis_log'
