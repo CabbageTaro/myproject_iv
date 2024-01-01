@@ -1,1 +1,6 @@
+__pycache__
+
 mysql/
+migrations/
+
+.DS_Store
