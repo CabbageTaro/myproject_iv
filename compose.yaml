@@ -2,22 +2,22 @@ services:
  web:
    container_name: "iv_api"
    build: .
-   command: python3 manage.py runserver 0.0.0.0:8000
-   working_dir: /src
+   working_dir: /src/iv_test
    ports:
      - 8000:8000
    volumes:
      - ./src:/src
    depends_on:
      - db
+   entrypoint: ["/entrypoint.sh"]
  db:
    container_name: "iv_mysql"
    image: mysql:8.0.35
    restart: always
    environment:
      MYSQL_DATABASE: "iv_database"
-     MYSQL_USER: root
-     MYSQL_PASSWORD: password
+     MYSQL_USER: "sk"
+     MYSQL_PASSWORD: "skpass"
      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
    volumes:
      - ./mysql:/var/lib/mysql
