@@ -82,6 +82,9 @@ DATABASES = {
         'PASSWORD': 'skpass',
         'HOST': 'db',
         'PORT': '3306',
+        'TEST': {
+            'MIRROR': "default",
+        },
     }
 }
 
